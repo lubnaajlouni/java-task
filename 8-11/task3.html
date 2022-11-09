@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <select style="margin: 12px; " onchange="stylefamily(this)">
+        
+        <option>Arial</option>
+        <option>Impact</option>
+        <option> helvetica</option>
+
+    </select>
+    <select style="margin: 12px;" onchange="fontsize(this)">
+    
+        <option>100px</option>
+        <option>40px</option>
+        <option> 10px</option>
+
+    </select>
+
+    <label for="it" class="boldit">Italic</label>
+    <input id="ic" type="checkbox" onclick="familyType(this)">
+
+
+
+    <label for="bo">Bold</label>
+    <input id="ld" type="checkbox" onclick="boldThis(this)">
+
+
+
+    <label for="un">Underline</label>
+    <input  id="un" type="checkbox" onclick="underlinethis(this)">
+
+
+    <textarea style="display:  block; width:500px;height:300px ;" class="style-this"></textarea>
+
+    <script>
+        function stylefamily(p) {
+
+            if (p.value == "Arial") {
+                document.getElementsByClassName("style-this")[0].style.fontFamily = "Arial";
+            }
+            else if (p.value == "Impact") {
+                document.getElementsByClassName("style-this")[0].style.fontFamily = "Impact";
+            }
+            else if (p.value == "helvetica") {
+                document.getElementsByClassName("style-this")[0].style.fontFamily = "helvetica";
+            }
+        }
+
+        function fontsize(p) {
+            console.log(p.value);
+            if (p.value == "100px") {
+               
+                document.getElementsByClassName("style-this")[0].style.fontSize = " 100px";
+            } else if (p.value == "40px") {
+                document.getElementsByClassName("style-this")[0].style.fontSize = "40px"
+            }
+            else if (p.value == "10px") {
+                document.getElementsByClassName("style-this")[0].style.fontSize = "10px"
+            }
+        }
+
+
+        function boldThis(bo) {
+            if (bo.checked) {
+                document.getElementsByClassName("style-this")[0].style.fontWeight = "bold";
+            }
+        }
+        function familyType(it) {
+            if (it.checked) {
+                document.getElementsByClassName("style-this")[0].style.fontStyle = "Italic";
+            }
+        }
+        function underlinethis(un) {
+            if (un.checked) {
+                document.getElementsByClassName("style-this")[0].style.textDecoration = "Underline";
+            }
+        }
+    </script>
+
+</body>
+
+</html>

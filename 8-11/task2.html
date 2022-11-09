@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+    
+        <label for="country"></label>
+        <select id="country" name="country" onchange=" thefunction()">
+          <option value="Norway">Norway</option>
+          <option value="Jordan">Jordan</option>
+          <option value="UAE">UAE</option>
+          <option value="QATAR">QATAR</option>
+        </select>
+<br>
+        <img id="img" src="n.jpg" width="25%" height="25%">
+      
+    <script>
+    function thefunction(x){
+    var x = document.getElementById("country").value;
+    if(x=="Norway"){
+            document.getElementById("img").src="n.jpg";
+        }
+      else if(x=="Jordan"){
+
+            document.getElementById("img").src="j.jpg";
+        }
+        else if(x=="UAE"){
+
+            document.getElementById("img").src="UAE.png";
+        }
+
+        else if(x=="QATAR"){
+
+          document.getElementById("img").src="qatar.png";
+       }
+
+                  }
+
+
+        </script>
+</body>
+</html>
