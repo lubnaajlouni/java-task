@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task two</title>
+    <style>
+        #D{height: 100PX; width: 300PX;}
+    </style>
+</head>
+<body>
+    
+    <form >
+        <label for="name"> subject:</label><br><br>
+        <input type="text" id="sub" name="sub"><br><br>
+     
+        <label for="D">  Description :</label><br><br>
+        <input type="text" id="desc" name="D" ><br><br>
+
+        <label for="name"> User Types:</label><br><br>
+        <input type="text" id="ut" name="ut"><br><br>
+        <label for="name"> Technology used:</label><br><br>
+        <input type="text" id="tu" name="tu"><br><br>
+      </form> 
+
+      <br>
+
+<button onclick="myFun()">sumbit</button>
+
+<br><br>
+   
+<div id="card" style="display:none;">
+    <p id="demo">subject:</p>
+    <p id="demo1"> Description :</p>
+    <p id="demo2">User Types:</p>
+    <p id="demo3"> Technology used:</p>
+</div1>
+
+
+    
+<script>
+
+
+
+
+function myFun(){
+    document.getElementById("card").style.display = "block";
+    document.getElementById("card").style.height="600px";
+    document.getElementById("card").style.width="300px";
+    document.getElementById("card").style.backgroundColor="#F0F0F0"
+    document.getElementById("card").style.border="2px solid black";
+
+ var sub =document.getElementById("sub").value;
+ sessionStorage.setItem('sub', sub);
+ var D =document.getElementById("desc").value; 
+ console.log(D);
+sessionStorage.setItem("D", D);
+var ut =document.getElementById("ut").value; 
+sessionStorage.setItem('ut', ut);
+var tu =document.getElementById("tu").value;
+sessionStorage.setItem('tu', tu);
+
+document.getElementById("demo").innerHTML+= sessionStorage.getItem("sub");
+document.getElementById("demo1").innerHTML += sessionStorage.getItem("D");
+ document.getElementById("demo2").innerHTML += sessionStorage.getItem("ut");
+ document.getElementById("demo3").innerHTML += sessionStorage.getItem("value");
+}
+
+
+
+
+    </script>
+</body>
+</html>

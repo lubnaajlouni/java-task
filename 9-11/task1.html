@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task one</title>
+    <style>
+        #BD {
+            height: 100PX;
+            width: 300PX;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form onchange="out()">
+        <label for="name"> name:</label><br><br>
+        <input type="text" id="name" name="name"><br><br>
+        <label for="age">age:</label><br><br>
+        <input type="text" id="age" name="age"><br><br>
+        <label for="major"> major:</label><br><br>
+        <input type="text" id="major" name="major"><br><br>
+        <label for="BD"> Brief Description:</label><br><br>
+        <input type="text" id="BD" name="BD"><br><br>
+        <p>Programming Language</p> <br>
+        <input type="checkbox" id="htm" name="lang" value="html">
+        <label for="language1">html</label><br>
+        <input type="checkbox" id="jav" name="lang" value="JavaScript">
+        <label for="language2"> java</label><br>
+        <input type="checkbox" id="cs" name="lang" value="CSS">
+        <label for="language2"> css</label><br>
+        <label for="gender"> gender:</label>
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="male">male</label>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">female</label><br>
+    </form>
+
+    <br><br>
+    <button onclick="myFun()">sumbit</button>
+    <br><br>
+
+    <div id="card" style="display:none;">
+        <p id="demo">my name is:</p>
+        <p id="demo1">my age is:</p>
+        <p id="demo2">my major is:</p>
+        <p id="demo3"> my Brief Description:</p>
+        <p id="demo4">Programming Language i have: </p>
+        <p id="demo5">I'am :</p>
+        </div1>
+
+</body>
+
+<script>
+
+    function out() {
+
+        var name = document.getElementById("name").value;
+        window.localStorage.setItem("name", name);
+
+        var age = document.getElementById("age").value;
+        window.localStorage.setItem("age", age);
+
+        var major = document.getElementById("major").value;
+        window.localStorage.setItem("major", major);
+
+        var BD = document.getElementById("BD").value;
+        window.localStorage.setItem("BD", BD);
+
+        var lang1 = document.getElementById("htm");
+        var lang2 = document.getElementById("jav");
+        var lang3 = document.getElementById("cs");
+        var programlang = " ";
+        if (lang1.checked == true) {
+            var lg1 = document.getElementById("htm").value;
+            programlang += lg1 + " ";
+        }
+        if (lang2.checked == true) {
+            var lg2 = document.getElementById("jav").value;
+            programlang += lg2 + " ";
+        }
+        if (lang3.checked == true) {
+            var lg3 = document.getElementById("cs").value;
+            programlang += lg3 + " ";
+        }
+        window.localStorage.setItem("programming Languages", programlang);
+
+
+        var gen = document.getElementsByName("gender");
+        var gender;
+
+        if (gen[0].checked == true) {
+            gender = document.getElementById("male").value;
+        }
+        if (gen[1].checked == true) {
+            gender = document.getElementById("female").value;
+        }
+        window.localStorage.setItem("gender", gender);
+
+    }
+
+
+
+
+
+
+
+
+    function myFun() {
+        document.getElementById("card").style.display = "block";
+        document.getElementById("card").style.height = "600px";
+        document.getElementById("card").style.width = "300px";
+        document.getElementById("card").style.backgroundColor = "#F0F0F0"
+        document.getElementById("card").style.border = "2px solid black";
+        document.getElementById("demo").innerHTML += window.localStorage.getItem("name");
+        document.getElementById("demo1").innerHTML += window.localStorage.getItem("age");
+        document.getElementById("demo2").innerHTML += localStorage.getItem("major");
+        document.getElementById("demo3").innerHTML += localStorage.getItem("BD");
+        document.getElementById("demo4").innerHTML += localStorage.getItem("programming Languages");
+        document.getElementById("demo5").innerHTML += localStorage.getItem("gender");
+
+    }
+
+
+
+
+</script>
+
+
+</html>
